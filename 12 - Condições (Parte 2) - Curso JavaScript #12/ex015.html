@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saudação do Dia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column; /* Adicionado para alinhar o conteúdo verticalmente */
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Saudação do Dia</h1>
+  <h2 id="horario">Agora são exatamente </h2> <!-- Adicionado o ID para selecionar com JavaScript -->
+  <script>
+    var agora = new Date();
+    var hora = agora.getHours();
+
+    // Selecionar o elemento <h2> pelo ID
+    var h2 = document.getElementById('horario');
+
+    // Atualizar o conteúdo do <h2> com a saudação e o horário
+    h2.textContent += `${hora} horas`;
+
+    if (hora < 12) {
+      console.log('Bom Dia!');
+      document.body.style.backgroundColor = 'pink'; // Fundo branco para bom dia
+      document.body.style.color = 'black'; // Texto preto para fundo branco
+      h2.textContent += ' - Bom Dia!'; // Adicionar saudação ao <h2>
+    } else if (hora <= 18) {
+      console.log('Boa Tarde!');
+      document.body.style.backgroundColor = 'yellow'; // Fundo amarelo para boa tarde
+      document.body.style.color = 'black'; // Texto preto para fundo branco
+      h2.textContent += ' - Boa Tarde!'; // Adicionar saudação ao <h2>
+    } else {
+      console.log('Boa Noite!');
+      document.body.style.backgroundColor = 'black'; // Fundo preto para boa noite
+      h2.style.color = 'white'; // Mudar cor do texto para branco para fundo preto
+      h2.textContent += ' - Boa Noite!'; // Adicionar saudação ao <h2>
+    }
+  </script>
+</body>
+</html>
+
+<!--
+
+.textContent é uma propriedade de elementos DOM que representa o texto de um nó de texto e todos os seus descendentes. Essa propriedade pode ser usada para acessar ou modificar o texto dentro de um elemento HTML.
+
+Ao usar elemento.textContent, você está acessando o conteúdo textual do elemento HTML especificado. Se o elemento tiver outros elementos aninhados dentro dele, o textContent também incluirá o texto desses elementos.
+
+-->

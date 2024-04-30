@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADASTRO</title>
+</head>
+<body>
+  <h1>Cadastramento</h1>
+  País: <input type="text" name="pais" id="pais"> 
+  <input type="button" value="Verificar" onclick="calcular()">
+  <div id="res"></div>
+
+  <script>
+
+    function calcular(){
+      var txtv = window.document.getElementById('pais').value
+      var res = window.document.querySelector('div#res')
+      res.innerHTML = `<p>Vivendo em  <strong>${txtv}</strong></p>`
+      if(txtv != 'Brasil') {
+        res.innerHTML += `<p> Você é <strong>ESTRANGEIRO!</strong></p>`
+      } else {
+      res.innerHTML += `<p>Você é Brasileiro!</p>`
+    }
+  }
+  </script>
+</body>
+</html>
+
+<!--
+
+<!DOCTYPE html>: Declara o tipo de documento como HTML5.
+
+<html lang="pt-BR">: Abre o elemento HTML, indicando o idioma do documento como português do Brasil.
+
+<head>: Inicia a seção de metadados do documento, onde são colocadas informações sobre o documento, como o conjunto de caracteres utilizado, a viewport e o título da página.
+
+<meta charset="UTF-8">: Define o conjunto de caracteres usado no documento como UTF-8, que inclui todos os caracteres necessários para a maioria dos idiomas.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Configura a viewport para o tamanho do dispositivo e define a escala inicial como 1.0.
+
+<title>CADASTRO</title>: Define o título da página como "CADASTRO".
+
+</head>: Fecha a seção de metadados do documento.
+
+<body>: Inicia a seção do corpo do documento, onde o conteúdo visível para o usuário é colocado.
+
+<h1>Cadastramento</h1>: Cria um título de nível 1 (h1) com o texto "Cadastramento".
+
+País: <input type="text" name="pais" id="pais">: Exibe um rótulo "País:" seguido de um campo de entrada de texto onde o usuário pode inserir o país. O atributo id é definido como "pais", que é usado posteriormente para acessar o valor inserido pelo usuário.
+
+<input type="button" value="Verificar" onclick="calcular()">: Cria um botão com o texto "Verificar" que, quando clicado, chama a função calcular().
+
+<div id="res"></div>: Cria uma div com o ID "res", que será usada para exibir o resultado da verificação do país.
+
+<script>: Inicia a seção de script, onde o código JavaScript é colocado.
+
+function calcular(){ ... }: Define a função calcular(), que é chamada quando o botão "Verificar" é clicado. Esta função faz a verificação do país inserido pelo usuário e exibe o resultado na div com o ID "res".
+
+var txtv = window.document.getElementById('pais').value: Obtém o valor inserido pelo usuário no campo de entrada de texto com o ID "pais" e armazena na variável txtv.
+
+var res = window.document.querySelector('div#res'): Seleciona a div com o ID "res" e armazena na variável res.
+
+res.innerHTML = <p>Vivendo em <strong>${txtv}</strong></p>;: Define o conteúdo HTML da div res como um parágrafo (<p>) contendo o país inserido pelo usuário.
+
+if(txtv != 'Brasil') { ... } else { ... }: Verifica se o país inserido é diferente de "Brasil". Se for diferente, adiciona um parágrafo indicando que o usuário é estrangeiro; caso contrário, adiciona um parágrafo indicando que o usuário é brasileiro.
+
+</script>: Fecha a seção de script.
+
+</body>: Fecha a seção do corpo do documento.
+
+</html>: Fecha o elemento HTML.
+
+-->

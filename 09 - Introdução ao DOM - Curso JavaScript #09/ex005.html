@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primeiros passos com DOM</title>
+  <style>
+    body {
+      background: rgb(68, 125, 199);
+      color: white;
+      font: normal 18pt Arial;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Iniciando estudos DOM</h1>
+  <p>Aqui vai o resultado</p>
+  <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+  <div id="msg">Clique em mim</div>
+  <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0] // O número 0 é o primeiro parágrafo, o segundo é 1 e assim sucessivamente...
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        // d.innerText = 'Estou aguardando...' // Altera o texto da div (1° opção)
+        window.document.getElementById('msg').innerText = 'Olá!' // Altera o texto da div (2° opção)
+
+        // window.document.write('Está escrito assim: ' + p1.innerText) // O texto do primeiro parágrafo
+        //corpo.style.background = 'black'
+        //p1.style.color = 'blue'
+        //document.write(p1.innerHTML) 
+/*
+No contexto desse código, a diferença entre innerText e innerHTML está na forma como eles retornam o conteúdo do elemento.
+
+innerText: Retorna o texto visível dentro do elemento, excluindo qualquer marcação HTML. Se houver elementos HTML aninhados dentro do elemento, o innerText retornará apenas o texto visível.
+
+innerHTML: Retorna todo o conteúdo HTML dentro do elemento, incluindo quaisquer elementos HTML e suas marcações. Isso significa que, se houver elementos HTML aninhados dentro do elemento, o innerHTML retornará todo o conteúdo, incluindo a marcação HTML desses elementos.
+
+Nesse caso, ao usar document.write(p1.innerHTML), você está escrevendo o conteúdo HTML do primeiro parágrafo (p1) na página. Isso incluirá todos os elementos HTML dentro do primeiro parágrafo, como o texto "Aqui vai o resultado" e o elemento <strong> com o texto "DOM". Se você usar innerText no lugar de innerHTML, apenas o texto visível dentro do primeiro parágrafo será escrito, excluindo quaisquer elementos HTML aninhados.
+*/
+  </script>
+  
+</body>
+</html>
+
+<!-- O que é DOM? Document Object Model
+Modelo de Objetos para documentos, ele não funciona dentro do nodejs, só funciona no navegador.
+
+                        Árvore DOM (do site que está sendo construído agora)
+                          window
+                              location (mostra a localização do site, URL, página atual,página anterior)
+                              document (documento atual)
+                                  html (Parte estrutura do site)
+                                      head (cabeçalho do site)
+                                          meta
+                                          title
+                                      body (corpo do site)
+                                          h1
+                                          p
+                                          p
+                                            strong
+                                          div
+                              history (guarda onde vc veio, pra onde vc vai - facilita a navegação do site)
+
+
+Dentro da árvore DOM fornecida, os elementos child e parent são organizados hierarquicamente da seguinte forma:
+
+Parent Element (Elemento Pai):
+
+window é o elemento pai de location, document e history.
+document é o elemento pai de html.
+html é o elemento pai de head e body.
+head e body são irmãos
+head e body são elementos pais de seus respectivos filhos.
+body é o elemento pai de h1, p, p (com strong), e div.
+
+Child Elements (Elementos Filhos):
+
+window tem location, document e history como filhos.
+document tem html como filho.
+html tem head e body como filhos.
+head tem meta e title como filhos.
+body tem h1, p, p (com strong), e div como filhos.
+
+Assim, cada elemento na árvore DOM tem seus próprios elementos filhos e um elemento pai, exceto o elemento superior, que geralmente é o window, que não tem um pai na estrutura do DOM, já que é o elemento mais alto na hierarquia.
+
+------------------------------------------------------------------------------------------------------------
+
+5 principais métodos de selecionar elementos DOM dentro de JS:
+
+1. por marca : getElementsByTagName()
+2. por ID : getElementById()
+3. por Nome : getElementsByName()
+4. por Classe : getElementsByClassName()
+5. por Seletor : querySelector() 
+querySelectorAll()
+
+
+Esses métodos de acesso são usados para obter referências a elementos HTML em uma página da web. Eles são usados para acessar elementos específicos com base em critérios diferentes. Vamos explicar cada um deles:
+
+1. Por marca (getElementsByTagName()): Este método retorna uma coleção de elementos com base em sua tag HTML. Por exemplo, document.getElementsByTagName('p') retorna todos os elementos <p> na página.
+
+2. Por ID: Este método é usado para obter um único elemento com base no atributo id. O método é getElementById(). Por exemplo, document.getElementById('myElement') retornaria o elemento com o ID "myElement", se ele existir na página.
+
+3. Por Nome: Este método retorna uma coleção de elementos com base no atributo name. O método é getElementsByName(). Por exemplo, document.getElementsByName('username') retornaria todos os elementos com o atributo name definido como "username".
+
+4. Por Classe: Este método retorna uma coleção de elementos com base em sua classe. O método é getElementsByClassName(). Por exemplo, document.getElementsByClassName('highlight') retornaria todos os elementos com a classe "highlight".
+
+5. Por Seletor: Este método permite selecionar elementos usando seletores CSS. O método é querySelector() para selecionar o primeiro elemento correspondente ao seletor e querySelectorAll() para selecionar todos os elementos correspondentes. Por exemplo, document.querySelector('#myElement') retornaria o primeiro elemento com o ID "myElement", e document.querySelectorAll('.highlight') retornaria todos os elementos com a classe "highlight".
+
+Esses métodos fornecem maneiras flexíveis de acessar elementos HTML em uma página da web, facilitando a manipulação dinâmica do conteúdo e do comportamento da página usando JavaScript.
+
+
+-->

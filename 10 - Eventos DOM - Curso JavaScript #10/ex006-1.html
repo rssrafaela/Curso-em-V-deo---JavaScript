@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos DOM</title>
+  <style>
+    div#area {
+      font: normal 20pt Arial;
+      background: rgb(42, 139, 42);
+      color: white;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    Intereja...
+  </div>
+  <script>
+    var a = window.document.getElementById('area') //escopo global
+   
+    function clicar() {
+          a.innerText = 'Clicou!'
+          a.style.background = 'red'
+    }
+
+    function entrar(){
+          a.innerText = 'Entrou!'
+    }
+
+    function sair(){
+          a.innerText = 'Saiu!'
+          a.style.background = 'green'
+    }
+
+  </script>
+  
+</body>
+</html>
+
+<!-- 
+
+ Em desenvolvimento web, eventos são ações que ocorrem em um elemento HTML, como cliques do mouse, pressionamentos de teclas, carregamento da página, etc. Quando um evento é acionado, geralmente é executado um bloco de código específico, conhecido como manipulador de eventos, que responde a esse evento de alguma forma.
+
+Por exemplo, alguns eventos comuns incluem:
+
+1. click: Acionado quando o elemento é clicado.
+
+2. mouseover: Acionado quando o cursor do mouse passa por cima do elemento.
+
+3. keydown: Acionado quando uma tecla do teclado é pressionada enquanto o elemento tem o foco.
+
+4. load: Acionado quando a página ou um elemento é completamente carregado.
+
+5. submit: Acionado quando um formulário é enviado.
+
+6. mouseenter: Este evento é acionado quando o cursor do mouse entra na área de um elemento. Ele difere do evento mouseover porque não é propagado quando o cursor do mouse se move dentro do elemento, mas apenas quando ele entra na área do elemento.
+
+7. mousemove: Este evento é acionado repetidamente enquanto o cursor do mouse se move sobre um elemento. Ele pode ser usado para detectar movimentos contínuos do mouse dentro da área do elemento.
+
+8. mousedown: Este evento é acionado quando um botão do mouse é pressionado enquanto o cursor está sobre o elemento. Ele não se preocupa com qual botão do mouse foi pressionado.
+
+9. mouseup: Este evento é acionado quando um botão do mouse é liberado após ter sido pressionado enquanto o cursor estava sobre o elemento. Assim como o evento mousedown, ele não se preocupa com qual botão do mouse foi liberado.
+
+10. mouseout: Este evento é acionado quando o cursor do mouse deixa a área de um elemento. Ele é o oposto do evento mouseenter. Diferentemente do evento mouseleave, ele também é acionado quando o cursor deixa a área do elemento para entrar em um de seus descendentes.
+
+Esses são apenas alguns exemplos de eventos, mas há muitos outros disponíveis. Manipular eventos é uma parte crucial do desenvolvimento web, pois permite interações dinâmicas com os usuários e a criação de aplicativos interativos.
+
+----------------------------------------------------------------------------------------------------------
+
+
+Funções : É um conjunto de código que vai ser executado só quando o evento ocorrer
+
+Bloco - só vai ocorrer por exemplo quando o evento ocorrer, o bloco é delimitado entre sinais de chaves {}. Esse bloco é nomeado por uma function, geralmente o nome dessas funções são nomes de ações que vamos fazer. E opcionalmente podemos colocar dentro dos paranteses alguns parametros.
+
+function ação(param) {
+
+
+}
+
+-->

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font: normal 20pt Arial;
+    }
+
+  </style>
+</head>
+<body>
+
+  <script>
+    var nome = window.prompt('Qual é seu nome?')
+    document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.<br/>`) 
+    document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br/>`)
+    document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}`)
+  </script>
+  
+</body>
+</html>
+
+<!--
+
+  Formatando Números
+
+  var n1 = 1543.5
+  n1
+  n1.toFixed(2) -> O método toFixed(2) é usado para formatar um número em uma string, especificando o número de casas decimais que devem ser exibidas após o ponto decimal. Aqui está como funciona:
+
+Sintaxe: n1.toFixed(2)
+n1: É o número que você deseja formatar.
+2: É o número de casas decimais que você deseja manter após o ponto decimal.
+
+---------------------------------------------------------------------------------------------------
+
+n1.toFixed(2).replace('.', ',') -> 
+O código n1.toFixed(2).replace('.', ',') em JavaScript serve para formatar um número com duas casas decimais e substituir o ponto decimal por uma vírgula. Aqui está como ele funciona:
+
+1. n1.toFixed(2):
+
+O método toFixed(2) é usado para formatar o número n1 com exatamente duas casas decimais após o ponto decimal. Isso garante que o número terá sempre duas casas decimais, mesmo que originalmente não tenha.
+
+Por exemplo, se n1 for o número 1234.56789, então n1.toFixed(2) retornará a string "1234.57", mantendo apenas duas casas decimais.
+
+2. .replace('.', ','):
+
+O método replace('.', ',') é usado para substituir o ponto decimal (.) na string resultante por uma vírgula (,).
+
+Isso é comum em países como o Brasil, onde a vírgula é usada como separador decimal em vez do ponto.
+
+Por exemplo, se o resultado de n1.toFixed(2) for "1234.57", então replace('.', ',') substituirá o ponto por uma vírgula, resultando em "1234,57".
+
+---------------------------------------------------------------------------------------------------
+
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) ->O método toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) em JavaScript é usado para formatar um número como uma string representando um valor monetário no formato de moeda brasileira (BRL - Real Brasileiro). Aqui está como ele funciona:
+
+Sintaxe: n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+Sintaxe: n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+Sintaxe: n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+
+n1: É o número que você deseja formatar como moeda.
+
+'pt-BR': Especifica o local (idioma) para formatação. Neste caso, 'pt-BR' indica que a formatação será feita de acordo com as convenções de linguagem do Brasil.
+
+{style: 'currency', currency: 'BRL'}: É um objeto de opções que define o estilo da formatação como "currency" (moeda) e a moeda como "BRL" (Real Brasileiro).
+
+Por exemplo, se n1 for o número 1234.56, então n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) retornará a string "R$ 1.234,56", formatando o número como um valor monetário brasileiro.
+-->
